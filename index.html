@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script src="./assets/js/script.js" defer></script>
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="todo-container">
+        <header class="title">
+            <h1>Lista de tarefas</h1>
+        </header>
+
+        <div class="add-todo">
+            <span>Adicione a sua tarefa:</span>
+            <div>
+                <input type="text" placeholder="O que você vai fazer?" id="input-add-todo">
+                <div class="add-buttons">
+                    <button class="submit" title="Adicionar tarefa">
+                        <i class="bi bi-plus"></i>
+                    </button>
+                    <button class="cancel" title="Cancelar tarefa">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-todo">
+            <div class="search">
+                <span>Pesquisar:</span>
+                <div>
+                    <input type="text" placeholder="Buscar" id="input-search-todo">
+                    <button class="eraser" title="Apagar campo de busca">
+                        <i class="bi bi-backspace-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="filter-todo">
+                <span>Filtro:</span>
+                <select>
+                    <option value="todos">Todos</option>
+                    <option value="feitos">Feitos</option>
+                    <option value="afazer">A fazer</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="todo-list">
+            <div class="list">
+                <ul>
+                    <li>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    </li>
+                </ul>
+                <div class="icon">
+                    <button class="check-todo" title="Marcar como feito">
+                        <i class="bi bi-check-lg"></i>
+                    </button>
+                    <button class="edite-todo" title="Editar tarefa">
+                        <i class="bi bi-pen"></i>
+                    </button>
+                    <button class="eraser-todo" title="Apagar tarefa">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+
+                </div>
+            </div>
+            
+            
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>
