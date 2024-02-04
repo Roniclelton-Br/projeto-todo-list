@@ -22,8 +22,8 @@ button {
     background-color: #fdfdfd;
     color: #102f5e;
     border: 2px solid #102f5e;
-    padding: .3rem .6rem;
-    font-size: 1rem;
+    padding: 4px 8px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -46,6 +46,7 @@ input {
     font-size: 16px;
     padding-left: 10px;
     outline: 0;
+    width: 100%;
 }
 
 /*CONTAINER////////////////////////////*/
@@ -55,7 +56,7 @@ input {
     background-color: #fff;
     opacity:  .9;
     padding: 20px;
-    margin: 30px auto;
+    margin: 10px auto;
     border-radius: 5px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -65,7 +66,7 @@ input {
 /*HEADER//////////////////////////////////////*/
 header {
     text-align: center;
-    padding: 10px 0;
+    padding: 0 0 10px 0;
     border-bottom: 2px solid #000;
 }
 
@@ -149,4 +150,48 @@ header {
     color: #fff;
     text-decoration: line-through;
     font-style: italic;
+}
+.done .icon .btn-check-todo {
+    background-color: #008000;
+    border-color: #fff;
+    color: #fff;
+}
+.done .icon .btn-check-todo:hover{
+    border-color: #008000;
+    background-color: #fff;
+}
+.done .icon .btn-check-todo:hover >i {
+    color: #008000;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 450px) {
+    .todo-container {
+        width: 350px;
+    }
+    .add-todo div,
+    .edite-todo div {
+        flex-direction: column;
+        align-items: center;
+    }
+    .add-todo .add-buttons,
+    .edite-todo .add-buttons {
+        display: flex;
+        flex-direction: row;
+    }
+    input {
+        padding: 5px;
+    }
+    .search-todo {
+        flex-direction: column;
+    }
+    .search-todo .filter-todo select {
+        width: 120px;
+    }
+    .todo-list .list {
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid #000;
+    }
 }
