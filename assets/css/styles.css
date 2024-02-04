@@ -128,12 +128,13 @@ header {
     margin-bottom: 2px;
 
 }
-.todo-list .list ul {
+.todo-list .list h3 {
     flex: 3;
 }
-.todo-list .list  ul li {
+.todo-list .list  h3 {
     height: 30px;
     padding: 5px;
+    font-size: 18px;
     border: 1px solid #ccc;
     margin-right: 5px;
     overflow-y: scroll;
@@ -146,7 +147,7 @@ header {
 .todo-list .done {
     background-color: #395169;
 }
-.done li {
+.done h3 {
     color: #fff;
     text-decoration: line-through;
     font-style: italic;
