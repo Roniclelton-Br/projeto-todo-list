@@ -56,12 +56,11 @@ input {
     background-color: #fff;
     opacity:  .9;
     padding: 20px;
-    margin: 10px auto;
+    margin: 50px auto;
     border-radius: 5px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
-
 
 /*HEADER//////////////////////////////////////*/
 header {
@@ -115,8 +114,6 @@ header {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
-    height: 180px;
-    overflow-y: scroll;
     border-bottom: 2px solid #ccc;
 }
 .todo-list .list {
@@ -165,11 +162,15 @@ header {
     color: #008000;
 }
 
+.hide {
+    display: none;
+}
 /*RESPONSIVIDADE*/
 
 @media (max-width: 450px) {
     .todo-container {
         width: 350px;
+        margin: 10px auto;
     }
     .add-todo div,
     .edite-todo div {
