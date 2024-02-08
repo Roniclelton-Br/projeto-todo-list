@@ -1,16 +1,21 @@
 //SELEÇÃO DE ELEMENTOS
+const areaTodoAdd = document.querySelector('.todo-container .add-todo');
+const areaTodoEdit = document.querySelector('.todo-container .edite-todo');
 
 const btnTodoAdd = document.querySelector('.add-buttons .submit')
 const todoInput = document.querySelector('#input-add-todo');
 const cancalAddBtn = document.querySelector('.cancel-add');
 
+const editInput = document.querySelector('.edite-todo input');
+
 const todoList = document.querySelector('.todo-list');
 
 
 const editAdd = document.querySelector('.add-buttons .edit-tarefa');
-const cancelEditBtn = document.querySelector('.cancel-edit');
-//const btnEditTodo = document.querySelectorAll('.todo-list .icon .btn-edite-todo');
 
+const cancelEditBtn = document.querySelector('.cancel-edit');
+
+let oldInputValue;
 
 //FUNÇÕES
 //ADICIONANDO A TAREFA NA LISTA
@@ -60,7 +65,20 @@ const saveTodo = (text) =>{
 // heightTodoList()
 
 function toggleInput(){
-    
+    areaTodoAdd.classList.toggle('hide');
+    areaTodoEdit.classList.toggle('hide');
+    todoList.classList.toggle('hide');
+};
+
+const updateTodo = (text) =>{
+    const todos = document.querySelectorAll('.list');
+
+    todos.forEach((todo)=>{
+        let todoTitle = document.querySelector('h3');
+        if(todoTitle.innerText === oldInputValue){
+            todoTitle.innerText = text;
+        }
+    })
 }
 
 //EVENTOS
@@ -86,6 +104,11 @@ cancalAddBtn.addEventListener('click', ()=>{
 document.addEventListener('click', (e) => {
     const targetEl = e.target;
     const parentEl = targetEl.closest('.list');
+    let todoTitle;
+
+    if(parentEl && parentEl.querySelector('h3')) {
+        todoTitle = parentEl.querySelector('h3').innerText;
+    }
 
     if(targetEl.classList.contains('btn-check-todo')){
         parentEl.classList.toggle('done')
@@ -96,6 +119,24 @@ document.addEventListener('click', (e) => {
     if(targetEl.classList.contains('btn-edite-todo')) {
         toggleInput();
 
+        editInput.value = todoTitle;
+        oldInputValue = todoTitle;
     }
 });
 
+cancelEditBtn.addEventListener('click', (e) =>{
+    e.preventDefault();
+
+    toggleInput();
+});
+
+editAdd.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    const editInputValue = editInput.value;
+    if(editInputValue) {
+        updateTodo(editInputValue);
+    }
+
+    toggleInput();
+})
