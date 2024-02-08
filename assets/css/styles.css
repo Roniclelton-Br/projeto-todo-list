@@ -114,6 +114,9 @@ header {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
+    height: auto;
+    max-height: 140px;
+    overflow-y: scroll;
     border-bottom: 2px solid #ccc;
 }
 .todo-list .list {

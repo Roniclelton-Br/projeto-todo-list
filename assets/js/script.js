@@ -52,17 +52,6 @@ const saveTodo = (text) =>{
     todoInput.value = '';
     todoInput.focus();
 }
-// function heightTodoList(){
-//     if(todoList.children = 3) {
-//         todoList.style.height = 'auto';
-//         todoList.style.overflowY = 'auto';
-//     }else {
-//         todoList.style.height = '150px';
-//         todoList.style.overflowY= 'scroll';
-//     }
-
-// }
-// heightTodoList()
 
 function toggleInput(){
     areaTodoAdd.classList.toggle('hide');
